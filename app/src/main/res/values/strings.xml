@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Idrive</string>
+    <string name="no_internet_error">No Internet</string>
+    <string name="retry">Retry</string>
+    <string name="web_view">Web View</string>
+    <string name="chrome_custom_tab">Chrome Custom tab</string>
+</resources>

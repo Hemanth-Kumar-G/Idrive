@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.hemanth.idrive.data.model.QuestionResponse.Tree.Item" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:paddingStart="@dimen/twentyDp"
+        android:paddingTop="@dimen/tenDp"
+        android:paddingEnd="@dimen/twentyDp"
+        android:paddingBottom="@dimen/tenDp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@{data.question}'
+            android:textSize="@dimen/fontFourteenSp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="How do I connect to a remote computer from my device?" />
+
+        <View
+            android:id="@+id/viewAnswerBg"
+            android:layout_width="@dimen/zeroDp"
+            android:layout_height="@dimen/zeroDp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/tvQuestionChromeView"
+            app:layout_constraintEnd_toEndOf="@id/tvQuestionWebView"
+            app:layout_constraintStart_toStartOf="@id/tvQuestionWebView"
+            app:layout_constraintTop_toTopOf="@id/tvQuestionWebView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvQuestionWebView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/tenDp"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableStart="@drawable/ic_black_circle"
+            android:drawablePadding="@dimen/tenDp"
+            android:gravity="center_vertical"
+            android:padding="@dimen/tenDp"
+            android:text="@string/web_view"
+            android:textSize="@dimen/fontFourteenSp"
+            app:layout_constraintTop_toBottomOf="@id/tvQuestion" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvQuestionChromeView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableStart="@drawable/ic_black_circle"
+            android:drawablePadding="@dimen/tenDp"
+            android:gravity="center_vertical"
+            android:padding="@dimen/tenDp"
+            android:text="@string/chrome_custom_tab"
+            android:textSize="@dimen/fontFourteenSp"
+            app:layout_constraintTop_toBottomOf="@id/tvQuestionWebView" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/grpAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="tvQuestionChromeView,tvQuestionWebView,viewAnswerBg"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
